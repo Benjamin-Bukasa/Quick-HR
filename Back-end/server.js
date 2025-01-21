@@ -1,6 +1,10 @@
 const express = require("express")
 const dotenv = require("dotenv").config()
+const connectDb = require("./config/dbConnection")
 const port = process.env.PORT || 5001
+
+
+connectDb()
 const app = express()
 const users = require("../Back-end/routes/users")
 

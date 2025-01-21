@@ -1,6 +1,12 @@
+const mongoose = require("mongoose")
+const Users = require("../models/usersModel")
+
+
+
 //Récuperation de tous utilisateur
-const getUsers = (req, res)=>{
-    res.status(200).json({message:"Liste de tous les utilisateurs"})
+const getUsers = async(req, res)=>{
+    const users = await Users.find()
+    res.status(200).json(users)
 }
 
 //Récuperation d'un utilisateur unique
@@ -9,7 +15,7 @@ const getUser = (req, res)=>{
 }
 
 //Création d'un nouvel utilisateur
-const createUser = (req, res)=>{
+const createUser = async (req, res)=>{
     const {firstName,lastName,position,email,password,location,matricule,dateBirth,role} = req.body;
     if(!firstName || !lastName || !position || !email || !password || !location || !matricule || !dateBirth || !role){
         res.status(400);
