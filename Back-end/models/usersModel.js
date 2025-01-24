@@ -14,6 +14,10 @@ const userSchema = mongoose.Schema({
         required:[true, "Entrez votre adresse email"],
         unique:true // le mot de passe doit être unique pour créer un utilisateur
     },
+    password:{
+      type:String,
+      required:[true, "Entrez une addresse !"],
+  },
     position:{
         type:String,
         required:[true, "Entrez votre poste au sein dans l'entreprise"]
