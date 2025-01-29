@@ -60,7 +60,7 @@ const userSchema = mongoose.Schema({
   },
   updatedAt: {
     type: Date,
-    default: Date.now, // Définit automatiquement la date actuelle
+    default: Date.now,
   }, 
 },
 {

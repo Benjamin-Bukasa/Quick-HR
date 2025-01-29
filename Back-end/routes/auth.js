@@ -1,11 +1,12 @@
 const express = require("express")
 const authRoutes = express.Router()
-const {loginUser,currentUser}=require("../controllers/auth")
+const {registerUser, loginUser,currentUser}=require("../controllers/auth")
 const validateToken = require("../middlewares/validateToken")
 
 
+authRoutes.route('/register').post(registerUser)
 authRoutes.route('/login').post(loginUser)
-authRoutes.route('/current').post(validateToken,currentUser)
+authRoutes.route('/current').get(validateToken,currentUser)
 
 
 

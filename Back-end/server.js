@@ -11,10 +11,11 @@ const employees = require("./routes/employee")
 const authRoutes = require("./routes/auth")
 
 
+
 app.use(express.json())
 app.use("/quickhr/api/users",users)
 app.use("/quickhr/api/employee",employees)
-app.use("/quickhr/api/auth",authRoutes)
+app.use("/quickhr/api/auth/",authRoutes)
 
 
 
